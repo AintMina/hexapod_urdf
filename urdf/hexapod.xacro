@@ -1,0 +1,532 @@
+<?xml version="1.0" ?>
+<robot name="hexapod" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find hexapod_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find hexapod_description)/urdf/hexapod.trans" />
+<xacro:include filename="$(find hexapod_description)/urdf/hexapod.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-4.934145154198359e-16 9.309707838110111e-17 -0.0003422823434696608" rpy="0 0 0"/>
+    <mass value="3.83445621123102"/>
+    <inertia ixx="0.01337" iyy="0.019992" izz="0.031085" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Tibia2_1">
+  <inertial>
+    <origin xyz="-0.014500000000000707 0.0771713751585763 0.0" rpy="0 0 0"/>
+    <mass value="0.2818804048648"/>
+    <inertia ixx="0.000919" iyy="1e-05" izz="0.00092" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0145 -0.3 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0145 -0.3 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Femur2_1">
+  <inertial>
+    <origin xyz="-0.0145 0.06000000000000413 8.708538218286283e-19" rpy="0 0 0"/>
+    <mass value="0.08006166385083642"/>
+    <inertia ixx="0.00011" iyy="2.3e-05" izz="0.000131" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0145 -0.18 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0145 -0.18 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Coxa2_1">
+  <inertial>
+    <origin xyz="-3.028576848473118e-15 0.03501194549628382 -0.014500000000000004" rpy="0 0 0"/>
+    <mass value="0.19798383238710035"/>
+    <inertia ixx="9.5e-05" iyy="1.7e-05" izz="8.6e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.115 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.115 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Tibia3_1">
+  <inertial>
+    <origin xyz="-0.07224932663916511 0.024970631745973082 -1.4986968815939349e-16" rpy="0 0 0"/>
+    <mass value="0.2754087769663326"/>
+    <inertia ixx="0.000221" iyy="0.000645" izz="0.000858" ixy="0.000367" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.284601 -0.181057 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.284601 -0.181057 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Femur3_1">
+  <inertial>
+    <origin xyz="-0.06137697333882122 0.018692999999995713 0.0" rpy="0 0 0"/>
+    <mass value="0.08320166385083949"/>
+    <inertia ixx="4.8e-05" iyy="9.8e-05" izz="0.000145" ixy="4.3e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.176347 -0.118557 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.176347 -0.118557 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Coxa3_1">
+  <inertial>
+    <origin xyz="-0.030103479079964468 0.017380405119817185 -0.014552003125930323" rpy="0 0 0"/>
+    <mass value="0.1994141995222797"/>
+    <inertia ixx="3.7e-05" iyy="7.7e-05" izz="8.7e-05" ixy="3.5e-05" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.127306 -0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.127306 -0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Tibia_1">
+  <inertial>
+    <origin xyz="0.057749326639162324 0.05008463174597211 -1.49869688159382e-16" rpy="0 0 0"/>
+    <mass value="0.2754087769663537"/>
+    <inertia ixx="0.000221" iyy="0.000645" izz="0.000858" ixy="-0.000367" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.299101 -0.155943 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.299101 -0.155943 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Femur_1">
+  <inertial>
+    <origin xyz="0.04687697333882124 0.04380699999999571 0.0" rpy="0 0 0"/>
+    <mass value="0.08320166385083949"/>
+    <inertia ixx="4.8e-05" iyy="9.8e-05" izz="0.000145" ixy="-4.3e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.190847 -0.093443 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.190847 -0.093443 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Coxa_1">
+  <inertial>
+    <origin xyz="0.030103479079964524 0.017380405119817185 -0.014552003125930326" rpy="0 0 0"/>
+    <mass value="0.1994141995222797"/>
+    <inertia ixx="3.7e-05" iyy="7.7e-05" izz="8.7e-05" ixy="-3.5e-05" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.127306 -0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.127306 -0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Tibia6_1">
+  <inertial>
+    <origin xyz="0.0577493266391651 -0.05008463174597308 -1.4986968815939349e-16" rpy="0 0 0"/>
+    <mass value="0.2754087769663326"/>
+    <inertia ixx="0.000221" iyy="0.000645" izz="0.000858" ixy="0.000367" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.299101 0.155943 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.299101 0.155943 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Femur6_1">
+  <inertial>
+    <origin xyz="0.04687697333882124 -0.04380699999999571 0.0" rpy="0 0 0"/>
+    <mass value="0.08320166385083949"/>
+    <inertia ixx="4.8e-05" iyy="9.8e-05" izz="0.000145" ixy="4.3e-05" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.190847 0.093443 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.190847 0.093443 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Coxa6_1">
+  <inertial>
+    <origin xyz="0.030103479079964496 -0.017380405119817185 -0.014552003125930323" rpy="0 0 0"/>
+    <mass value="0.1994141995222797"/>
+    <inertia ixx="3.7e-05" iyy="7.7e-05" izz="8.7e-05" ixy="3.5e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.127306 0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.127306 0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Tibia5_1">
+  <inertial>
+    <origin xyz="-0.014499999999999296 -0.0771713751585763 0.0" rpy="0 0 0"/>
+    <mass value="0.2818804048647997"/>
+    <inertia ixx="0.000919" iyy="1e-05" izz="0.00092" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0145 0.3 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0145 0.3 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Femur5_1">
+  <inertial>
+    <origin xyz="-0.0145 -0.06000000000000413 0.0" rpy="0 0 0"/>
+    <mass value="0.08006166385083642"/>
+    <inertia ixx="0.00011" iyy="2.3e-05" izz="0.000131" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0145 0.18 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0145 0.18 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Coxa5_1">
+  <inertial>
+    <origin xyz="-3.028576848473118e-15 -0.03501194549628382 -0.014499999999999997" rpy="0 0 0"/>
+    <mass value="0.19798383238710035"/>
+    <inertia ixx="9.5e-05" iyy="1.7e-05" izz="8.6e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.115 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.115 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Tibia4_1">
+  <inertial>
+    <origin xyz="-0.07224932663916234 -0.02497063174597211 -1.49869688159382e-16" rpy="0 0 0"/>
+    <mass value="0.2754087769663537"/>
+    <inertia ixx="0.000221" iyy="0.000645" izz="0.000858" ixy="-0.000367" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.284601 0.181057 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.284601 0.181057 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Tibia4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Femur4_1">
+  <inertial>
+    <origin xyz="-0.06137697333882122 -0.018692999999995713 0.0" rpy="0 0 0"/>
+    <mass value="0.08320166385083949"/>
+    <inertia ixx="4.8e-05" iyy="9.8e-05" izz="0.000145" ixy="-4.3e-05" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.176347 0.118557 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.176347 0.118557 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Femur4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Coxa4_1">
+  <inertial>
+    <origin xyz="-0.030103479079964524 -0.017380405119817185 -0.014552003125930326" rpy="0 0 0"/>
+    <mass value="0.1994141995222797"/>
+    <inertia ixx="3.7e-05" iyy="7.7e-05" izz="8.7e-05" ixy="-3.5e-05" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.127306 0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.127306 0.0735 -0.0145" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find hexapod_description)/meshes/Coxa4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Tibia2" type="continuous">
+  <origin xyz="0.0 0.12 0.0" rpy="0 0 0"/>
+  <parent link="Femur2_1"/>
+  <child link="Tibia2_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Femur2" type="continuous">
+  <origin xyz="0.0145 0.065 -0.0145" rpy="0 0 0"/>
+  <parent link="Coxa2_1"/>
+  <child link="Femur2_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Coxa2" type="continuous">
+  <origin xyz="0.0 0.115 0.0145" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Coxa2_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Tibia3" type="continuous">
+  <origin xyz="-0.108254 0.0625 0.0" rpy="0 0 0"/>
+  <parent link="Femur3_1"/>
+  <child link="Tibia3_1"/>
+  <axis xyz="0.5 0.866025 0.0"/>
+</joint>
+
+<joint name="Femur3" type="continuous">
+  <origin xyz="-0.049041 0.045057 -0.0145" rpy="0 0 0"/>
+  <parent link="Coxa3_1"/>
+  <child link="Femur3_1"/>
+  <axis xyz="-0.5 -0.866025 0.0"/>
+</joint>
+
+<joint name="Coxa3" type="continuous">
+  <origin xyz="-0.127306 0.0735 0.0145" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Coxa3_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Tibia1" type="continuous">
+  <origin xyz="0.108254 0.0625 0.0" rpy="0 0 0"/>
+  <parent link="Femur_1"/>
+  <child link="Tibia_1"/>
+  <axis xyz="0.5 -0.866025 0.0"/>
+</joint>
+
+<joint name="Femur1" type="continuous">
+  <origin xyz="0.063541 0.019943 -0.0145" rpy="0 0 0"/>
+  <parent link="Coxa_1"/>
+  <child link="Femur_1"/>
+  <axis xyz="-0.5 0.866025 0.0"/>
+</joint>
+
+<joint name="Coxa1" type="continuous">
+  <origin xyz="0.127306 0.0735 0.0145" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Coxa_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Tibia6" type="continuous">
+  <origin xyz="0.108254 -0.0625 0.0" rpy="0 0 0"/>
+  <parent link="Femur6_1"/>
+  <child link="Tibia6_1"/>
+  <axis xyz="0.5 0.866025 0.0"/>
+</joint>
+
+<joint name="Femur6" type="continuous">
+  <origin xyz="0.063541 -0.019943 -0.0145" rpy="0 0 0"/>
+  <parent link="Coxa6_1"/>
+  <child link="Femur6_1"/>
+  <axis xyz="-0.5 -0.866025 0.0"/>
+</joint>
+
+<joint name="Coxa6" type="continuous">
+  <origin xyz="0.127306 -0.0735 0.0145" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Coxa6_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Tibia5" type="continuous">
+  <origin xyz="0.0 -0.12 0.0" rpy="0 0 0"/>
+  <parent link="Femur5_1"/>
+  <child link="Tibia5_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Femur5" type="continuous">
+  <origin xyz="0.0145 -0.065 -0.0145" rpy="0 0 0"/>
+  <parent link="Coxa5_1"/>
+  <child link="Femur5_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Coxa5" type="continuous">
+  <origin xyz="0.0 -0.115 0.0145" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Coxa5_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Tibia4" type="continuous">
+  <origin xyz="-0.108254 -0.0625 0.0" rpy="0 0 0"/>
+  <parent link="Femur4_1"/>
+  <child link="Tibia4_1"/>
+  <axis xyz="0.5 -0.866025 0.0"/>
+</joint>
+
+<joint name="Femur4" type="continuous">
+  <origin xyz="-0.049041 -0.045057 -0.0145" rpy="0 0 0"/>
+  <parent link="Coxa4_1"/>
+  <child link="Femur4_1"/>
+  <axis xyz="-0.5 0.866025 0.0"/>
+</joint>
+
+<joint name="Coxa4" type="continuous">
+  <origin xyz="-0.127306 -0.0735 0.0145" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Coxa4_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+</robot>
